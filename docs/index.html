@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дашборд онлайн-тренировок</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Онлайн-тренировки · 10 недель</p>
+        <h1>Длительность тренировок</h1>
+        <p class="subtitle">Размер кружка показывает среднюю глубину просмотра,<br>цвет — долю пользователей, которые посмотрели тренировку.</p>
+      </div>
+      <div class="controls">
+        <label>Тренер<select id="trainer-filter"><option value="all" selected>Все тренеры</option></select></label>
+        <label>Тип тренировки<select id="type-filter"><option value="all" selected>Все типы</option></select></label>
+      </div>
+    </header>
+
+    <section class="legend">
+      <div class="legend-item"><span class="legend-dot size-s"></span><span>глубина просмотра</span></div>
+      <div class="size-scale"><span class="size-circle small"></span><span class="size-circle medium"></span><span class="size-circle large"></span><span>меньше</span><span>больше</span></div>
+      <div class="legend-item color-legend"><span class="color-scale"></span><span>доля посмотревших</span><div class="gradient-labels"><span>меньше</span><span>больше</span></div></div>
+    </section>
+
+    <section class="chart-shell">
+      <div class="y-title">Длительность, мин</div>
+      <div id="chart-scroll" class="chart-scroll"><svg id="chart" role="img" aria-label="График длительности тренировок"></svg></div>
+    </section>
+
+    <section class="icon-key">
+      <div data-key-type="Разминка"><svg class="key-icon" viewBox="0 0 24 24"><use href="#icon-battery"/></svg>Разминка</div>
+      <div data-key-type="Кардио"><svg class="key-icon" viewBox="0 0 24 24"><use href="#icon-heart"/></svg>Кардио</div>
+      <div data-key-type="Силовая"><svg class="key-icon" viewBox="0 0 24 24"><use href="#icon-dumbbell"/></svg>Силовая</div>
+      <div data-key-type="Интенсив"><svg class="key-icon" viewBox="0 0 24 24"><use href="#icon-bolt"/></svg>Интенсив</div>
+      <div data-key-type="Дэнс"><svg class="key-icon" viewBox="0 0 24 24"><use href="#icon-shoe"/></svg>Дэнс</div>
+      <div data-key-type="Йога"><svg class="key-icon" viewBox="0 0 24 24"><use href="#icon-prayer"/></svg>Йога</div>
+    </section>
+    <p class="footnote">Наведите курсор на кружок, чтобы увидеть тренера, тип, просмотры, глубину просмотра и неделю.</p>
+  </main>
+  <div id="tooltip" class="tooltip" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
